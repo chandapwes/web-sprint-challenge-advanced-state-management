@@ -4,11 +4,11 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import logger from 'redux-logger';
-import thunk from 'redux-logger';
+import thunk from 'redux-thunk';
 
 import "./index.css";
 import App from "./App";
-import { applyMiddleware, createStore } from "redux";
+import reducer from './reducers';
 
 const { worker } = require('./mocks/browser');
 worker.start();

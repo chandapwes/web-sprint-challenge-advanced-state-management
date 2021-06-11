@@ -13,10 +13,10 @@ export const initialState = {
         }
     ],
     isFetching: false,
-    error: ''
+    error: 'An Error Occurred'
 }
 
-const reducer = (state, action)=>{
+const reducer = (state = initialState, action)=>{
 
     switch(action.type) {
         case(FETCH_START):

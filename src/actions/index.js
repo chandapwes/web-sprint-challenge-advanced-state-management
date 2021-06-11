@@ -12,6 +12,7 @@ export const ADD_ERROR = 'ADD_ERROR';
 //3. Add a standard action that allows us to set the value of the error message slice of state.
 
 export const fetchSmurfs = () => {
+    // const { }
     return (dispatch) => {
         dispatch(fetchStart())
 
@@ -23,6 +24,18 @@ export const fetchSmurfs = () => {
                 dispatch(fetchFail(error));
             })
     }
+}
+
+export const fetchStart = () => {
+    return({type: FETCH_START});
+}
+
+export const fetchSuccess = (smurfs) => {
+    return({type: FETCH_SUCCESS, payload:smurfs});
+}
+
+export const fetchFail = (error) => {
+    return({type: FETCH_FAIL, payload: error});
 }
 
 export const addSmurf = (name, nickname, position, description) => {
